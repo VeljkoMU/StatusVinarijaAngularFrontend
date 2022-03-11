@@ -1,0 +1,10 @@
+<div class="main-container">
+    <div>
+        <label>Izaberite ciljani generator: </label>
+        <select [(ngModel)]="genNum" (change)="load()">
+            <option value=1>Generator 1</option>
+        </select>
+    </div>
+
+    <app-generator *ngIf="gen" [gen]="gen"></app-generator>
+</div>

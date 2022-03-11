@@ -1,0 +1,14 @@
+<div class="main-container">
+    <div>
+        <label>Prava pristupa: </label>
+        <select [(ngModel)]="username">
+            <option value="posmatrac">Posmatranje</option>
+            <option value="upravljac">Upravljanje</option>
+        </select>
+    </div>
+    <div>
+        <label>Sifra: </label>
+        <input type="password" [(ngModel)]="password">
+    </div>
+    <button class="btn" (click)="login()">Enter</button>
+</div>

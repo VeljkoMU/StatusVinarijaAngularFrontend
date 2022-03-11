@@ -1,0 +1,22 @@
+<div class="generator">
+    <div>
+    <div>
+        <label>Stanje: {{gen.stanje}}</label>
+    </div>
+    <label>Senzor 1:</label>
+    <div class="senzor" [ngStyle]="{backgroundColor: gen.senzor1?'green':'red'}">
+
+    </div>
+
+    <label>Senzor 2:</label>
+    <div class="senzor" [ngStyle]="{backgroundColor: gen.senzor2?'green':'red'}">
+
+    </div>
+    </div>
+
+    <div class="oper-form" *ngIf="!done">
+        <label>Vreme operacije: </label>
+        <input type="number" [(ngModel)]="time">
+        <button class="btn">Pokreni</button>
+    </div>
+</div>
