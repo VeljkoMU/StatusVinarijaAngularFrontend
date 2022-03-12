@@ -1,5 +1,48 @@
 .senzor{
-    width: 3px;
+    width: 30px;
     height: 30px;
     border: 1px solid black;
+}
+
+.view{
+    height: max-content;
+    background-image: url("../../../assets/generator.png");
+    background-position: center;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    width: 500px;
+}
+
+.generator{
+    height: 1000px;
+}
+.sdiv{
+    color: white;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20%;
+    width: 100%;
+}
+
+.stanje{
+    transform: translateY(50px);
+}
+
+
+.btn{
+    margin:15px;
+    padding: 15px 30px 15px 30px;
+    border:none;
+    background-color:crimson;
+    font-size: larger;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover{
+    background-color: aqua;
 }

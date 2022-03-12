@@ -1,16 +1,19 @@
 <div class="generator">
-    <div>
-    <div>
+    <div class="view">
+    <div class="stanje">
         <label>Stanje: {{gen.stanje}}</label>
     </div>
+    <div class="sdiv">
     <label>Senzor 1:</label>
     <div class="senzor" [ngStyle]="{backgroundColor: gen.senzor1?'green':'red'}">
 
     </div>
-
+    </div>
+    <div class="sdiv">
     <label>Senzor 2:</label>
     <div class="senzor" [ngStyle]="{backgroundColor: gen.senzor2?'green':'red'}">
 
+    </div>
     </div>
     </div>
 
