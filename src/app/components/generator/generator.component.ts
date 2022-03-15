@@ -16,7 +16,7 @@ export class GeneratorComponent implements OnInit {
     stanje: "STANJE UREDJAJA SE UCITAVA"
   };
 
-  public time: number = 0;
+  public time: Date = new Date();
 
   public done: boolean = false;
 
@@ -30,7 +30,7 @@ export class GeneratorComponent implements OnInit {
     if(this.gen.num==0)
       return;
 
-    this.sysData.postOperation(this.gen.num, this.time).subscribe((res)=>{
+    this.sysData.postOperation(this.gen.num, this.time.toString()).subscribe((res)=>{
       if(!res.ok)
         alert("Zakazivanje operacije nije uspelo!")
       else

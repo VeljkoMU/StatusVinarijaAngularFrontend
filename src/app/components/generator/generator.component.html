@@ -19,7 +19,7 @@
 
     <div class="oper-form" *ngIf="!done">
         <label>Vreme operacije: </label>
-        <input type="number" [(ngModel)]="time">
-        <button class="btn">Pokreni</button>
+        <input type="datetime-local" [(ngModel)]="time">
+        <button class="btn" (click)="runOperatoion()">Pokreni</button>
     </div>
 </div>
