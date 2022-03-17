@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Generator } from 'src/app/models/generator';
 import { SystemDataService } from 'src/app/services/system-data.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-generator',
@@ -19,11 +20,14 @@ export class GeneratorComponent implements OnInit {
   public time: Date = new Date();
 
   public done: boolean = false;
+  public user: string = ""
 
-  constructor(private sysData: SystemDataService) { }
+  constructor(private sysData: SystemDataService,
+              private usetData: UserDataService) { }
 
   ngOnInit(): void {
     console.log(this.gen);
+    this.user = this.usetData.Username
   }
 
   public runOperatoion(){

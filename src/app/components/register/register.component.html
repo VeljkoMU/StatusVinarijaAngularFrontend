@@ -1,0 +1,16 @@
+<div class="main-container">
+    <div *ngIf="!succsess">
+        <label>Ime i Prezime</label>
+        <input [(ngModel)]="name">
+    </div>
+    <div *ngIf="!succsess">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password">
+    </div>
+    <button *ngIf="!succsess" class="btn" (click)="register()">REGISTRUJ</button>
+
+    <div *ngIf="succsess">
+        <h1>USPENO REGISTROVAN NOVI KORISNIK</h1>
+        <button class="btn" (click)="goBack()">VRATI SE NAZAD</button>
+    </div>
+</div>

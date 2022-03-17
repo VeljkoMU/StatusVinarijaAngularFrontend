@@ -15,4 +15,8 @@ export class UiService {
   public gotoLogin(){
     this.router.navigate(['login']);
   }
+
+  public gotoRegistration(){
+    this.router.navigate(['registration']);
+  }
 }

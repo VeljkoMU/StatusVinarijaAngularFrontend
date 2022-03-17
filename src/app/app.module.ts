@@ -8,13 +8,15 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
 import { GeneratorComponent } from './components/generator/generator.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MainComponent,
-    GeneratorComponent
+    GeneratorComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

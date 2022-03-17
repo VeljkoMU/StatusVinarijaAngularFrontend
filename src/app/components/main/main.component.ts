@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { Generator } from 'src/app/models/generator';
 import { SystemDataService } from 'src/app/services/system-data.service';
+import { UiService } from 'src/app/services/ui.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-main',
@@ -14,9 +16,14 @@ export class MainComponent implements OnInit {
 
   public gen: Generator|undefined;
 
-  constructor(private sysData: SystemDataService) { }
+  public role:string ="";
+
+  constructor(private sysData: SystemDataService,
+              private userData: UserDataService,
+              private ui: UiService) { }
 
   ngOnInit(): void {
+    this.role = this.userData.Username;
   }
 
   public load(){
@@ -28,6 +35,10 @@ export class MainComponent implements OnInit {
         stanje: data.stanje
       };
     })
+  }
+
+  public gotoRegistration(){
+    this.ui.gotoRegistration();
   }
 
 }

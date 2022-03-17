@@ -1,4 +1,5 @@
 <div class="main-container">
+    <button (click)="gotoRegistration()" class="btn" *ngIf="role=='administrator'">REGISTRUJ NOVOG UPRAVLAJCA</button>
     <div>
         <label>Izaberite ciljani generator: </label>
         <select [(ngModel)]="genNum" (change)="load()">
