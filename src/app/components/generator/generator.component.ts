@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Generator } from 'src/app/models/generator';
 import { SystemDataService } from 'src/app/services/system-data.service';
+import { UiService } from 'src/app/services/ui.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
@@ -23,7 +24,8 @@ export class GeneratorComponent implements OnInit {
   public user: string = ""
 
   constructor(private sysData: SystemDataService,
-              private usetData: UserDataService) { }
+              private usetData: UserDataService,
+              private ui: UiService) { }
 
   ngOnInit(): void {
     console.log(this.gen);
@@ -35,8 +37,13 @@ export class GeneratorComponent implements OnInit {
       return;
 
     this.sysData.postOperation(this.gen.num, this.time.toString()).subscribe((res)=>{
+      console.log(res.status);
       if(!res.ok)
-        alert("Zakazivanje operacije nije uspelo!")
+        alert("Zakazivanje operacije nije uspelo!");
+      else if(res.status==404)
+        this.ui.gotoLogin();
+        else if(res.status==403)
+        alert("Zakazivanje operacije nije uspelo!");
       else
         this.done = true;
     });

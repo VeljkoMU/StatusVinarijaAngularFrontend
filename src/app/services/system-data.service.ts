@@ -12,11 +12,12 @@ export class SystemDataService {
               private userData: UserDataService) { }
 
   public getGenStatus(num: number){
+    this.userData.resetTimeout();
     return this.httpClient.get(`http://localhost:5000/generator/${num}/${this.userData.Token}`).pipe(share());
   }
 
   public postOperation(num: number, time:string){
-    console.log("Slanje...");
+    this.userData.resetTimeout();
     return this.httpClient.post(`http://localhost:5000/generator/${num}/${this.userData.Token}`, {
       time: time
     }, {observe: "response"}).pipe(share());

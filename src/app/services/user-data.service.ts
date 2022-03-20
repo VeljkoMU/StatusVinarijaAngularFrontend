@@ -8,6 +8,7 @@ import { share } from 'rxjs';
 export class UserDataService {
   private token:string = ""
   private username:string = ""
+  public sessionTimeout: any;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,10 +21,15 @@ export class UserDataService {
     obs.subscribe((data: any)=>{
       this.token = data.token;
       this.username = username;
-      alert(this.token);
+      this.sessionTimeout=setTimeout(()=>this.token="", 1000*60*5);
     });
 
     return obs;
+  }
+
+  public resetTimeout(){
+    clearTimeout(this.sessionTimeout);
+    this.sessionTimeout=setTimeout(()=>this.token="", 1000*60*5);
   }
 
   public register(username: string, password:string, name:string){
