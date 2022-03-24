@@ -13,7 +13,7 @@ export class SystemDataService {
 
   public getGenStatus(num: number){
     this.userData.resetTimeout();
-    return this.httpClient.get(`http://localhost:5000/generator/${num}/${this.userData.Token}`).pipe(share());
+    return this.httpClient.get(`http://localhost:5000/generator/${num}/ggg`).pipe(share());
   }
 
   public postOperation(num: number, time:string){

@@ -13,3 +13,30 @@ select{
     font-size: larger;
 
 }
+
+.select{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.select div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 5px;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 30px;
+    background-image: url("../../../assets/generator.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    color:white;
+    transition: 1s ease-in-out;
+}
+
+.select div:hover{
+    width: 150px;
+    height: 150px;
+}

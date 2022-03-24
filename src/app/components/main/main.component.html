@@ -1,10 +1,7 @@
 <div class="main-container">
     <button (click)="gotoRegistration()" class="btn" *ngIf="role=='administrator'">REGISTRUJ NOVOG UPRAVLAJCA</button>
-    <div>
-        <label>Izaberite ciljani generator: </label>
-        <select [(ngModel)]="genNum" (change)="load()">
-            <option value=1>Generator 1</option>
-        </select>
+    <div class = "select">
+        <div *ngFor="let num of genEnum" (click)="load(num)">{{num}}</div>
     </div>
 
     <app-generator *ngIf="gen" [gen]="gen"></app-generator>

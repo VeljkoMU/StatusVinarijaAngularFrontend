@@ -18,6 +18,8 @@ export class MainComponent implements OnInit {
 
   public role:string ="";
 
+  public genEnum:any = [1,2,3,4,5,6,7,8,9,10,11,12];
+
   constructor(private sysData: SystemDataService,
               private userData: UserDataService,
               private ui: UiService) { }
@@ -26,10 +28,10 @@ export class MainComponent implements OnInit {
     this.role = this.userData.Username;
   }
 
-  public load(){
-    this.sysData.getGenStatus(this.genNum).subscribe((data:any)=>{
+  public load(genNum: number){
+    this.sysData.getGenStatus(genNum).subscribe((data:any)=>{
       this.gen = {
-        num:this.genNum,
+        num:genNum,
         senzor1: data.senzor1,
         senzor2: data.senzor2,
         stanje: data.stanje

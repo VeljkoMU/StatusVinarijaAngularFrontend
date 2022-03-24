@@ -7,7 +7,7 @@
             <option value="administrator">Administracija</option>
         </select>
     </div>
-    <div>
+    <div *ngIf="username!='posmatrac'">
         <label>Sifra: </label>
         <input type="password" [(ngModel)]="password">
     </div>
