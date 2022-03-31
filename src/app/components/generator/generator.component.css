@@ -6,14 +6,14 @@
 
 .view{
     height: max-content;
-    background-image: url("../../../assets/generator.png");
+    background-image: url("../../../assets/bg1.png");
     background-position: center;
-    height: 50%;
+    height: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:flex-start;
-    width: 500px;
+    justify-content:center;
+    width: 250px;
 }
 
 .green{
@@ -24,7 +24,7 @@
     height: 1000px;
 }
 .sdiv{
-    color: white;
+    color: black;
     font-size: large;
     display: flex;
     flex-direction: column;
