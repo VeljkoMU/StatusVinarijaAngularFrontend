@@ -22,6 +22,7 @@ export class GeneratorComponent implements OnInit {
 
   public done: boolean = false;
   public user: string = ""
+  public delay: number = 0;
 
   constructor(private sysData: SystemDataService,
               private usetData: UserDataService,
@@ -36,7 +37,7 @@ export class GeneratorComponent implements OnInit {
     if(this.gen.num==0)
       return;
 
-    this.sysData.postOperation(this.gen.num, this.time.toString()).subscribe((res)=>{
+    this.sysData.postOperation(this.gen.num, this.time.toString(), this.delay).subscribe((res)=>{
       console.log(res.status);
       if(!res.ok)
         alert("Zakazivanje operacije nije uspelo!");

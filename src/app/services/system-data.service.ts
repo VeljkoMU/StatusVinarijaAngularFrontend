@@ -16,10 +16,11 @@ export class SystemDataService {
     return this.httpClient.get(`http://localhost:5000/generator/${num}/ggg`).pipe(share());
   }
 
-  public postOperation(num: number, time:string){
+  public postOperation(num: number, time:string, delay: number){
     this.userData.resetTimeout();
     return this.httpClient.post(`http://localhost:5000/generator/${num}/${this.userData.Token}`, {
-      time: time
+      time: time,
+      delay: delay
     }, {observe: "response"}).pipe(share());
   }
 }

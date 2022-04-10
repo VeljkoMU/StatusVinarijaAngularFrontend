@@ -24,6 +24,10 @@
     <div class="oper-form" *ngIf="user=='upravljac'">
         <label>Vreme operacije: </label>
         <input type="datetime-local" [(ngModel)]="time">
+        <div>
+            <label>Unesite delay vreme(u sekundama): </label>
+            <input type = "number" [(ngModel)]="delay">
+        </div>
         <button class="btn" (click)="runOperatoion()">Pokreni</button>
     </div>
 
